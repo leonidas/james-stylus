@@ -1,0 +1,22 @@
+{
+  "name": "james-coffee",
+  "version": "0.0.0",
+  "description": "James plugin to compile CoffeeScript files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cat src/coffee.coffee | coffee -sc > index.js"
+  },
+  "repository": "",
+  "keywords": [
+    "coffee",
+    "script",
+    "build",
+    "tool",
+    "james"
+  ],
+  "author": "Jarno Keskikangas",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "~1.6.1"
+  }
+}
