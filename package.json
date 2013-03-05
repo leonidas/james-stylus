@@ -1,6 +1,6 @@
 {
   "name": "james-coffee",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "James plugin to compile CoffeeScript files.",
   "main": "index.js",
   "scripts": {
