@@ -5,7 +5,8 @@
     "node": ">=0.6.0"
   },
   "dependencies":{
-    "stylus": "~0.21.2",
+    "james": "~0.0.4",
+    "stylus": "~0.32.1",
     "baconjs": "~0.1.7"
   },
 
