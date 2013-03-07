@@ -1,22 +1,13 @@
 {
-  "name": "james-coffee",
+  "name": "james-stylus",
   "version": "0.0.1",
-  "description": "James plugin to compile CoffeeScript files.",
-  "main": "index.js",
-  "scripts": {
-    "test": "cat src/coffee.coffee | coffee -sc > index.js"
+  "engines": {
+    "node": ">=0.6.0"
   },
-  "repository": "",
-  "keywords": [
-    "coffee",
-    "script",
-    "build",
-    "tool",
-    "james"
-  ],
-  "author": "Jarno Keskikangas",
-  "license": "MIT",
-  "dependencies": {
-    "coffee-script": "~1.6.1"
-  }
+  "dependencies":{
+    "stylus": "~0.21.2",
+    "baconjs": "~0.1.7"
+  },
+
+  "private": "true"
 }
