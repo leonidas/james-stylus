@@ -4,4 +4,4 @@ stylus = require 'james-stylus'
 module.exports = tasks = {}
 
 tasks.stylus = ->
-  james.files('example.styl').flatMap(stylus).onValue james.write
+  james.files('*.styl').flatMap(stylus).onValue james.write
