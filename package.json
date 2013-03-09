@@ -4,11 +4,17 @@
   "engines": {
     "node": ">=0.6.0"
   },
-  "dependencies":{
-    "james": "~0.0.4",
-    "stylus": "~0.32.1",
-    "baconjs": "~0.1.7"
+  "scripts": {
+    "test": "mocha --compilers coffee:coffee-script"
   },
-
-  "private": "true"
+  "dependencies": {
+    "james": "0.0.6",
+    "stylus": "~0.32.1",
+    "q": "~0.9.1"
+  },
+  "private": "true",
+  "devDependencies": {
+    "james-coffee": "0.0.2",
+    "baconjs": "~0.1.7"
+  }
 }

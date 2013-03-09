@@ -1,12 +1,9 @@
+james  = require 'james'
 stylus = require 'stylus'
-{Bacon} = require 'baconjs'
+Q      = require 'q'
 
-module.exports = (files) ->
-  Bacon.fromArray(files).flatMap (file) ->
-    Bacon.fromCallback (callback) ->
-      stylus.render file.content, name: file.name, (err, css) ->
-        # TODO errors
-        callback [
-          content: css
-          name: file.name.replace /.(stylus|styl)$/, '.css'
-        ]
+module.exports = james.transformer (file) ->
+  Q.nfcall(stylus.render, file.content, name: file.name)
+    .then (css) ->
+      content: css
+      name:    file.name.replace /.(stylus|styl)$/, '.css'

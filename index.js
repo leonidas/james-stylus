@@ -1,25 +1,21 @@
 (function() {
-  var Bacon, stylus;
+  var Q, james, stylus;
+
+  james = require('james');
 
   stylus = require('stylus');
 
-  Bacon = require('baconjs').Bacon;
+  Q = require('q');
 
-  module.exports = function(files) {
-    return Bacon.fromArray(files).flatMap(function(file) {
-      return Bacon.fromCallback(function(callback) {
-        return stylus.render(file.content, {
-          name: file.name
-        }, function(err, css) {
-          return callback([
-            {
-              content: css,
-              name: file.name.replace(/.(stylus|styl)$/, '.css')
-            }
-          ]);
-        });
-      });
+  module.exports = james.transformer(function(file) {
+    return Q.nfcall(stylus.render, file.content, {
+      name: file.name
+    }).then(function(css) {
+      return {
+        content: css,
+        name: file.name.replace(/.(stylus|styl)$/, '.css')
+      };
     });
-  };
+  });
 
 }).call(this);
