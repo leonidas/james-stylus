@@ -15,3 +15,8 @@ james.task('default', function() {
   });
 });
 ```
+
+## API
+
+`stylus(options)`: Return a new Stylus to CSS transformer. Available options are listed in 
+[Stylus documentation](http://learnboost.github.com/stylus/docs/js.html).
