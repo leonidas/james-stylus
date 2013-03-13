@@ -1,6 +1,5 @@
 var james = require('james'),
-   stylus = require('stylus'),
-        Q = require('q');
+   stylus = require('stylus');
 
 module.exports = function(options) {
   return james.createStream(function(file, callback) {
