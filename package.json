@@ -2,18 +2,19 @@
   "name": "james-stylus",
   "version": "0.0.2",
   "engines": {
-    "node": ">=0.6.0"
+    "node": ">=0.8.0"
   },
   "scripts": {
-    "test": "mocha --compilers coffee:coffee-script"
+    "test": "jshint ./**/*.js && mocha"
   },
   "dependencies": {
-    "james": "0.0.6",
+    "james": "~0.1.4",
     "stylus": "~0.32.1",
     "q": "~0.9.1"
   },
   "devDependencies": {
-    "james-coffee": "0.0.2",
-    "baconjs": "~0.1.7"
+    "mocha": "~1.8.2",
+    "jshint": "~1.1.0",
+    "readable-stream": "~1.0.2"
   }
 }

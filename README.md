@@ -2,15 +2,16 @@
 
 Stylus to CSS transformer for [James.js](https://github.com/leonidas/james.js).
 
-```coffeescript
-james  = require 'james'
-coffee = require 'james-stylus'
+```javascript
+var james  = require('james'),
+    stylus = require('james-stylus');
 
-module.exports = tasks = {}
+james.task('default', function() {
 
-tasks.default = ->
-  james.files('src/**/*.styl')
-    .map(stylus)
-    .onValue james.write
-
+  james.files('src/**/*.styl').forEach(function(file) {
+    james.read(file)
+      .transform(stylus({filename: file}))
+      .write(process.stdout);
+  });
+});
 ```
