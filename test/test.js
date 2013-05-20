@@ -18,4 +18,18 @@ describe('james-stylus', function() {
       done();
     });
   });
+
+  it('should inject plugins via use()', function(done) {
+    var myPlugin = function(style){
+      assert(style !== null);
+      done();
+    };
+
+    var src  = new stream.PassThrough(),
+        dest = new stream.PassThrough();
+
+    src.pipe(stylus({use: myPlugin})).pipe(dest);
+    src.write('body\n  background red');
+    src.end();
+  });
 });
