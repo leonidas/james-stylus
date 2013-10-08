@@ -1,8 +1,12 @@
 {
   "name": "james-stylus",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "engines": {
     "node": ">=0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leonidas/james-stylus"
   },
   "scripts": {
     "test": "jshint ./**/*.js && mocha"
